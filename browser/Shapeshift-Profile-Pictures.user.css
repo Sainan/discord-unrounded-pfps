@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Shapeshift Profile Pictures
 @description  Change the shape of avatars to circle, rounded, square, or anything in between. You decide.
-@version      1.9.13
+@version      1.9.14
 @namespace    Sainan
 @author       Sainan
 @homepageURL  https://github.com/Sainan/Shapeshift-Profile-Pictures
@@ -109,13 +109,16 @@
 
 @-moz-document domain("youtube.com")
 {
-    yt-img-shadow#avatar,
-    yt-img-shadow.ytd-channel-avatar-editor,
-    #avatar-btn yt-img-shadow,
-    #author-thumbnail yt-img-shadow,
-    yt-img-shadow#author-thumbnail,
-    yt-img-shadow.ytd-guide-entry-renderer,
-    .ytp-title-channel-logo
+    yt-img-shadow.ytd-guide-entry-renderer, /* subscriptions in sidebar */
+    .yt-spec-avatar-shape__image, /* feed, channel view */
+    #avatar-btn yt-img-shadow, /* own avatar in navbar */
+    #author-thumbnail yt-img-shadow, /* community post */
+    #avatar.ytd-video-owner-renderer, /* uploader avatar on view page */
+    .ytp-title-channel-logo, /* uploader avatar in embed */
+    yt-img-shadow#author-thumbnail, /* own avatar on "Add a comment..." */
+    .image-thumbnail.ytcp-navigation-drawer, /* own avatar in studio */
+    #author-thumbnail-container, /* commenter avatar in studio */
+    .subscriber-avatar.ytcd-recent-activity-subscribers /* subscriber avatar in studio */
     {
         border-radius: var(--avatar-shape) !important;
     }
